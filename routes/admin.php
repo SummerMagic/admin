@@ -72,5 +72,9 @@ Route::prefix('admin-api')
                 ->except(['store', 'show', 'create']);
             Route::put('system-media', [C\SystemMediaController::class, 'batchUpdate'])->name('system-media.batch.update');
             Route::delete('system-media', [C\SystemMediaController::class, 'batchDestroy'])->name('system-media.batch.destroy');
+            //订单路由信息
+            Route::resource('PayOrderInfos', C\PayOrderInfoController::class);
+
+
         });
     });

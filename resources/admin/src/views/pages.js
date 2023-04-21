@@ -24,4 +24,9 @@ export default {
   'vue-routers/:id(\\d+)/edit': () => import('@v/vue-routers/Form'),
 
   'system-media': () => import('@v/system-media/Index'),
+
+  'PayOrderInfos': () => import('@v/PayOrderInfos/Index'),
+  'PayOrderInfos/create': () => import('@v/PayOrderInfos/Form'),
+  'PayOrderInfos/:id(\\d+)/edit': () => import('@v/PayOrderInfos/Form'),
+
 }

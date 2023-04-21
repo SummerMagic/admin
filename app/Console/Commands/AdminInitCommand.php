@@ -88,7 +88,7 @@ class AdminInitCommand extends Command
             ['id', 'parent_id', 'title', 'path', 'order', 'icon', 'menu'],
             $inserts,
             [
-                'cache' => 0,
+                'cache'      => 0,
                 'created_at' => now(),
                 'updated_at' => now(),
                 'permission' => null,
@@ -111,7 +111,7 @@ class AdminInitCommand extends Command
             });
 
         $user = AdminUser::create([
-            'name' => '管理员',
+            'name'     => '管理员',
             'username' => 'admin',
             'password' => bcrypt('000000'),
         ]);
@@ -124,8 +124,8 @@ class AdminInitCommand extends Command
         AdminRole::first()
             ->permissions()
             ->create([
-                'name' => '所有权限',
-                'slug' => 'pass-all',
+                'name'      => '所有权限',
+                'slug'      => 'pass-all',
                 'http_path' => '*',
             ]);
     }
@@ -149,12 +149,16 @@ class AdminInitCommand extends Command
             [1, Config::TYPE_OTHER, '首页路由', 'home_route', null, json_encode('1'), 'required|exists:vue_routers,id'],
             [1, Config::TYPE_INPUT, 'CDN 域名', 'cdn_domain', null, json_encode('/'), 'required|string'],
             [
-                1, Config::TYPE_SINGLE_SELECT, '后台登录验证码', 'admin_login_captcha',
+                1,
+                Config::TYPE_SINGLE_SELECT,
+                '后台登录验证码',
+                'admin_login_captcha',
                 json_encode([
                     'options' => "1=>开启\n0=>关闭",
-                    'type' => 'input',
+                    'type'    => 'input',
                 ]),
-                json_encode('1'), 'required|string',
+                json_encode('1'),
+                'required|string',
             ],
         ];
         $configs = $this->combineInserts(
@@ -176,9 +180,9 @@ class AdminInitCommand extends Command
     /**
      * 组合字段和对应的值
      *
-     * @param array $fields 字段
-     * @param array $inserts 值，不带字段的
-     * @param array $extra 每列都相同的数据，带字段
+     * @param  array  $fields   字段
+     * @param  array  $inserts  值，不带字段的
+     * @param  array  $extra    每列都相同的数据，带字段
      *
      * @return array
      */
