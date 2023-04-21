@@ -25,8 +25,8 @@ export default {
 
   'system-media': () => import('@v/system-media/Index'),
 
-  'PayOrderInfos': () => import('@v/PayOrderInfos/Index'),
-  'PayOrderInfos/create': () => import('@v/PayOrderInfos/Form'),
-  'PayOrderInfos/:id(\\d+)/edit': () => import('@v/PayOrderInfos/Form'),
+  'pay-order-infos': () => import('@v/pay-order-infos/Index'),
+  'pay-order-infos/create': () => import('@v/pay-order-infos/Form'),
+  'pay-order-infos/:id(\\d+)/edit': () => import('@v/pay-order-infos/Form'),
 
 }

@@ -40,7 +40,7 @@
           </transition>
         </div>
       </a-layout-content>
-      <a-layout-footer style="text-align: left;">LZ - admin</a-layout-footer>
+      <a-layout-footer style="text-align: left;">运营系统</a-layout-footer>
     </a-layout>
   </a-layout>
 </template>
