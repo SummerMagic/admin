@@ -12,17 +12,9 @@
       :pagination="false"
     >
       <a-table-column title="ID" data-index="id" :width="60"/>
-      <a-table-column title="字段名" data-index="id"/>
-      <a-table-column title="字段名" data-index="pay_order_id"/>
-      <a-table-column title="字段名" data-index="app_code"/>
-      <a-table-column title="字段名" data-index="user_id"/>
-      <a-table-column title="字段名" data-index="channel_user_id"/>
-      <a-table-column title="字段名" data-index="pay_channel"/>
-      <a-table-column title="字段名" data-index="merchant_id"/>
-      <a-table-column title="字段名" data-index="order_type"/>
-      <a-table-column title="字段名" data-index="product_id"/>
-      <a-table-column title="添加时间" data-index="create_time" :width="180"/>
-      <a-table-column title="修改时间" data-index="update_time" :width="180"/>
+      <a-table-column title="字段名" data-index="field_name"/>
+      <a-table-column title="添加时间" data-index="created_at" :width="180"/>
+      <a-table-column title="修改时间" data-index="updated_at" :width="180"/>
       <a-table-column title="操作" :width="100">
         <template #default="record">
           <space>
@@ -47,7 +39,7 @@ import Space from '@c/Space'
 import {
   destroyPayOrderInfo,
   getPayOrderInfos,
-} from '@/api/PayOrderInfos'
+} from '@/api/pay-order-infos'
 import { removeWhile } from '@/libs/utils'
 
 export default {
